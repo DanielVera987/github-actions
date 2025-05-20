@@ -1,0 +1,17 @@
+name: with_script
+
+on: [push]
+
+jobs:
+  with_script:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checout code
+      uses: actions/checkout@v4
+
+    - name: Run script
+      run: |
+        chmod 777 script.sh
+        ./script.sh
+      
