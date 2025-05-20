@@ -15,6 +15,9 @@ jobs:
 
     - name: Cat NodeJS Version
       run: node --version
+    
+    - name: Hello
+      uses: ./.github/actions/my-actions
 
     # Si queremos instalar algo, primero se recomienda validar si existe un action que ya haga esa instalación
     #- name: Run script
