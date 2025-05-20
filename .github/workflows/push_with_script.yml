@@ -1,4 +1,4 @@
-name: with_script
+name: push_with_script
 
 on: [push]
 

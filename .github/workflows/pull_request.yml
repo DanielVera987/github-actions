@@ -1,6 +1,6 @@
-name: Hola mundo
+name: pull_request
 
-on: ['push', 'pull_request']
+on: ['pull_request']
 
 # Si queremos que solo aplique para una rama especifica
 # on:
