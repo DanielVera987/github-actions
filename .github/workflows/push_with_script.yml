@@ -10,8 +10,14 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v4
 
-    - name: Run script
-      run: |
-        chmod 777 script.sh
-        ./script.sh
+    - name: Setup NodeJS
+      uses: actions/setup-node@v4
+
+    - name: Cat NodeJS Version
+      run: node --version
+
+    #- name: Run script
+    #  run: |
+    #    chmod 777 script.sh
+    #    ./script.sh
       
