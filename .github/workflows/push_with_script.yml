@@ -16,6 +16,7 @@ jobs:
     - name: Cat NodeJS Version
       run: node --version
 
+    # Si queremos instalar algo, primero se recomienda validar si existe un action que ya haga esa instalación
     #- name: Run script
     #  run: |
     #    chmod 777 script.sh
