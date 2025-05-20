@@ -1,1 +1,1 @@
-sudo apk update
+sudo apt-get update
