@@ -1,8 +1,12 @@
-name: With services
+name: With services & Variables Entorno
 on: [push]
 jobs:
   say-hello:
     runs-on: ubuntu-latest
+
+    # ENV Se puede a nivel job
+    env:
+      MY_ENV: my_var
 
     services: # Los servicios se basan en contenedores de docker, podemos obtenerlo de su pagina oficial
       mysql:
@@ -14,4 +18,5 @@ jobs:
     
     steps:
       - name: ls
-        run: ls
+        # ENV Se puede a nivel step
+        run: echo Mi variable: $MY_ENV
