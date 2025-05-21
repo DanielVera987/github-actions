@@ -1,5 +1,5 @@
-name: Laravel CI
-#on: ['push'] # Se comenta ya que en mi proyecto de prueba para github actions no tengo un proyecto de laravel
+name: Laravel_CI
+on: ['push'] # Se comenta ya que en mi proyecto de prueba para github actions no tengo un proyecto de laravel
 jobs:
   laravel-test:
     runs-on: ubuntu-latest
