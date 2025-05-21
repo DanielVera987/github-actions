@@ -1,0 +1,14 @@
+name: Test Workflow Dispatch
+
+on: workflow_dispatch
+
+jobs:
+  test-ls:
+    runs-on: ubuntu-latest
+
+    steps: 
+    - name: ls
+      run: ls -la
+    
+    - name: echo HelloWorld
+      run: echo "Hello"
