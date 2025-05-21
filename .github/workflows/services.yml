@@ -17,6 +17,6 @@ jobs:
           - 3306:3306
     
     steps:
-      - name: ls
-        # ENV Se puede a nivel step
-        run: echo Mi variable: $MY_ENV
+    - name: ls
+      # ENV Se puede a nivel step
+      run: echo "Mi variable $MY_ENV"
