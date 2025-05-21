@@ -1,0 +1,36 @@
+name: Laravel CI
+#on: ['push'] # Se comenta ya que en mi proyecto de prueba para github actions no tengo un proyecto de laravel
+jobs:
+  laravel-test:
+    runs-on: ubuntu-latest
+
+    services:
+      mysql:
+        image: mysql:8.0
+        ports:
+          - 3006:3006
+        env:
+          MYSQL_ROOT_PASSWORD: root
+          MYSQL_DATABASE: Laravel
+    
+    steps:
+    - name: Checkout code
+      uses: actions\checkout@v3
+    
+    - name: Set up PHP
+      uses: shivammathur/setup-php@v2
+      with:
+        php-version: '8.4'
+        extensions: mbstring, bcmath, pdo, pdo_mysql
+    
+    - name: Install packages
+      run: composer install --no-interactions
+
+    - name: Generate .env
+      run: cp .env-example ./.env
+
+    - name: Generate key
+      run: php artisan key:generate
+
+    - name: Set test
+      run: vendor/bin/phpunit
