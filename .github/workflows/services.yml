@@ -1,7 +1,7 @@
 name: With services & Variables Entorno
 on: [push]
 jobs:
-  say-hello:
+  services-env:
     runs-on: ubuntu-latest
 
     # ENV Se puede a nivel job
@@ -19,4 +19,6 @@ jobs:
     steps:
     - name: ls
       # ENV Se puede a nivel step
-      run: echo "Mi variable $MY_ENV"
+      env:
+        MY_ENV_2: my_var_in_step
+      run: echo "Mi variable $MY_ENV y $MY_ENV_2"
